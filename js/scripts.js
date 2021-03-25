@@ -30,3 +30,5 @@ function deleteListItem() {
     li.addClass('delete');
 }
 
+// Reorder items
+$('#list').sortable();
