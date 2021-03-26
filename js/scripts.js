@@ -11,23 +11,25 @@ function newItem() {
     } 
 
 // Function that crosses out an item from the list of items:
-function crossOut() {
-    li.toggleClass('strike');
+    function crossOut() {
+        li.toggleClass('strike');
+    }
+
+    li.on('dblclick', crossOut);
+
+    // Adding a delete button
+    let crossOutButton = $('<crossOutButton></crossOutButton>');
+    crossOutButton.append(document.createTextNode('X'));
+    li.append(crossOutButton);
+
+    crossOutButton.on('click', deleteListItem);
+
+    // Function that will add .delete class from css:
+    function deleteListItem() {
+        li.addClass('delete');
+    }
+
+    // Reorder items
+    $('#list').sortable();
+
 }
-
-li.on('dblclick', crossOut);
-
-// Adding a delete button
-let crossOutButton = $('<crossOutButton></crossOutButton>');
-crossOutButton.append(document.createTextNode('X'));
-li.append(crossOutButton);
-
-crossOutButton.on('click', deleteListItem)
-
-// Function that will add .delete class from css:
-function deleteListItem() {
-    li.addClass('delete');
-}
-
-// Reorder items
-$('#list').sortable();}
