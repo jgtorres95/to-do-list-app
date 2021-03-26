@@ -9,7 +9,6 @@ function newItem() {
     } else {
         $('#list').append(li);
     } 
-}
 
 // Function that crosses out an item from the list of items:
 function crossOut() {
@@ -31,4 +30,4 @@ function deleteListItem() {
 }
 
 // Reorder items
-$('#list').sortable();
+$('#list').sortable();}
